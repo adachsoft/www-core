@@ -3,6 +3,7 @@ sudo: false
 cache:
     yarn: true
     directories:
+        - $HOME/.sonar/cache
         - $HOME/.composer/cache/files
         - $HOME/symfony-bridge/.phpunit
         - ./bin/.phpunit
@@ -23,6 +24,13 @@ matrix:
     allow_failures:
           # Dev-master is allowed to fail.
         - env: STABILITY="dev-master"
+
+addons:
+  sonarcloud:
+    organization: "adachsoft-github"
+    token:
+      secure: ${SONAR_TOKEN}
+
 before_install:
     - if [[ $COVERAGE != true ]]; then phpenv config-rm xdebug.ini || true; fi
     - if ! [ -z "$STABILITY" ]; then composer config minimum-stability ${STABILITY}; fi;
