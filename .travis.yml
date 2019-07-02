@@ -27,7 +27,7 @@ install:
     #- if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
     - ls -lah
     - composer install ${COMPOSER_FLAGS} --no-interaction --no-scripts
-    - ./bin/phpunit install
+    #- ./bin/phpunit install
     - ls -lah
     
     
