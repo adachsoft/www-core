@@ -52,7 +52,7 @@ script:
     #- ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
     #php bin/phpunit
     #- sonar-scanner
-    echo ${SONAR_TOKEN}
+    - echo ${SONAR_TOKEN}
     - sonar-scanner \
         -Dsonar.projectKey=adachsoft_www-core \
         -Dsonar.organization=adachsoft-github \
