@@ -62,7 +62,7 @@ script:
         -Dsonar.login=${SONAR_TOKEN}
 
 after_script:
-    - ls -lah  
+    - ls ./tests -lah  
 
 after_failure:
     - ls -lah
