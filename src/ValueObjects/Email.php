@@ -41,6 +41,6 @@ final class Email implements ValueObjectsInterface
         if( $valueObject instanceof self ){
             return $this->value === $valueObject->getValue();
         }
-        throw new \Exception('!!!');
+        throw new \App\Exceptions\InvalidValueException('Incompatible value for comparison');
     }
 }
