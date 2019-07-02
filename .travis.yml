@@ -51,6 +51,7 @@ script:
     # it helps with testing legacy code and deprecations (composer require symfony/phpunit-bridge)
     #- ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
     #php bin/phpunit
+    - sonar-scanner
 
 after_script:
     - ls -lah  
