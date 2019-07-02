@@ -25,11 +25,8 @@ before_install:
 install:
     # To be removed when this issue will be resolved: https://github.com/composer/composer/issues/5355
     #- if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
-    - ls -lah
-    - composer install ${COMPOSER_FLAGS} --no-interaction --no-scripts
-    #- ./bin/phpunit install
-    #- ./vendor/bin/simple-phpunit install
-    - ls -lah
+    - composer install ${COMPOSER_FLAGS} --no-interaction
+    - ./bin/phpunit install
     
     
 script:
