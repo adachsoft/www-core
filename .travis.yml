@@ -25,7 +25,7 @@ install:
     # To be removed when this issue will be resolved: https://github.com/composer/composer/issues/5355
     #- if [[ "$COMPOSER_FLAGS" == *"--prefer-lowest"* ]]; then composer update --prefer-dist --no-interaction --prefer-stable --quiet; fi
     - ls -lah
-    - composer install ${COMPOSER_FLAGS} --no-interaction && ls -lah
+    - composer install ${COMPOSER_FLAGS} --no-interaction
     - ./bin/phpunit install
     #- ./vendor/bin/simple-phpunit install
     - ls -lah
@@ -37,4 +37,7 @@ script:
     # it helps with testing legacy code and deprecations (composer require symfony/phpunit-bridge)
     #- ./vendor/bin/simple-phpunit $PHPUNIT_FLAGS
     #php bin/phpunit
+
+after_failure:
+    - ls -lah
     
